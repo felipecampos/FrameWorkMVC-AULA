@@ -9,13 +9,13 @@
 
 namespace App\Controllers;
 
-//controller
-class IndexController{
+//controller Login
+class LoginController{
 
 	//action
-	public function Index(){
+	public function telaInicial(){
 
-		return "Hello World!";
+		return "Aqui vai ficar nossa tela de login";
 	}
 
 	

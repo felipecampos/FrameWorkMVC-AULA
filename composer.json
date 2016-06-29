@@ -1,5 +1,8 @@
 {
 	"autoload":{
 		"psr-4":{"FrameworkAULA\\":"vendor/frameworkAULA/","App\\":"app/"}
+	},
+	"require": {
+		"klein/klein": "^2.1"
 	}
 }
