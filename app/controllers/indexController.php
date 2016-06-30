@@ -9,14 +9,19 @@
 
 namespace App\Controllers;
 
-//controller
-class IndexController{
+use FrameworkAULA\Http\Controller;
 
+//controller
+class IndexController extends Controller{
+
+	
 	//action
 	public function Index(){
 
-		return "Hello World!";
+		$this->service->render('index.phtml');
 	}
+
+
 
 	
 

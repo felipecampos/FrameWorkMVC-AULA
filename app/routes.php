@@ -10,5 +10,6 @@
 //Rota principal
 $route->get("/","Index@Index");
 
+
 //Rota de Login
 $route->get("/login","Login@telaInicial");

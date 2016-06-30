@@ -28,8 +28,9 @@ class Route extends Klein{
 			$action = $explode[1];
 			
 
-			$this->respond("GET",$route,function() use ($controller,$action){
+			$this->respond("GET",$route,function($request, $response, $service, $app) use ($controller,$action){
 				$class = new $controller();
+				$class->__loadVars($request, $response, $app);
 				return $class->$action();
 			});
 
