@@ -21,10 +21,6 @@ class BaseController extends Controller{
 		parent::__loadVars($request, $response,  $app);
 
 		$this->service->layout(VIEWS.'/layouts/default.phtml');
-	}
-
-
-
-	
+	}	
 
 }

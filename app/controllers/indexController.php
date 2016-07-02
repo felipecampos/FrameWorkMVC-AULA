@@ -23,6 +23,16 @@ class IndexController extends BaseController{
 
 
 
-	
+	public function cadContact(){
+		$this->service->render('home/cad.home.phtml');
+	}
 
+
+	public function editContact(){
+
+		$id = $this->request->id;
+		$data_contact = array();
+
+		$this->service->render('home/edit.home.phtml',$data_contact);
+	}
 }

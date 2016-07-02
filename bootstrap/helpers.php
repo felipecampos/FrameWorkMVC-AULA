@@ -1,8 +1,10 @@
 <?php
 
-function assets($file){
+
+function base_url(){
 
 	$proto = strtolower(preg_replace("/[^a-zA-Z\s]/", '', $_SERVER["SERVER_PROTOCOL"]));
+	
 	$serve_name = $_SERVER["SERVER_NAME"];
 
 	$port =$_SERVER["SERVER_PORT"] == "80" ? "" : ":".$_SERVER["SERVER_PORT"];
@@ -11,5 +13,13 @@ function assets($file){
 
 	$request_uri = $_SERVER["REQUEST_URI"];
 
-	return "{$proto}://{$serve_name}{$port}{$scriptname}".ASSETS."{$file}";
+	return "{$proto}://{$serve_name}{$port}{$scriptname}";
 }
+
+
+function assets($file){
+
+	return base_url().ASSETS."{$file}";
+}
+
+
