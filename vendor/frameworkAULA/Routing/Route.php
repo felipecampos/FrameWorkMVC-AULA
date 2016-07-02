@@ -24,7 +24,7 @@ class Route extends Klein{
 		if(is_string($call)){
 
 			$explode = explode("@", $call);
-			$controller = "App\\Controllers\\".$explode[0]."Controller";
+			$controller = "App\\".NAMESPACE_CONTROLLERS."\\".$explode[0]."Controller";
 			$action = $explode[1];
 			
 

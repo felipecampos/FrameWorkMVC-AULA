@@ -8,7 +8,11 @@
 
 
 /*Carregando autoload do composer*/
-require_once __DIR__."/bootstrap/autoload.php";
+$start = require_once __DIR__."/bootstrap/autoload.php";
+
+//print_r($_SERVER);
+
+$start->dispatch();
 
 
 // //nosso namespace o qual estará gerenciando nossos dados GET/
@@ -16,3 +20,6 @@ require_once __DIR__."/bootstrap/autoload.php";
 
 // //Execução do Método Run do System, o qual executará toda regra de negocio
 // $start->run();
+
+
+

@@ -9,13 +9,15 @@
 
 namespace App\Controllers;
 
+use FrameworkAULA\Http\Controller;
+
 //controller Login
 class LoginController extends Controller{
 
 	//action
 	public function telaInicial(){
 
-		return "Aqui vai ficar nossa tela de login";
+		$this->service->render('login/index.login.phtml');
 	}	
 
 }

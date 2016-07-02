@@ -12,13 +12,15 @@ namespace App\Controllers;
 use FrameworkAULA\Http\Controller;
 
 //controller
-class IndexController extends BaseController{
+class BaseController extends Controller{
 
 	
-	//action
-	public function Index(){
+	public function __loadVars($request, $response,  $app){
 
-		$this->service->render('home/list.home.phtml');
+
+		parent::__loadVars($request, $response,  $app);
+
+		$this->service->layout(VIEWS.'/layouts/default.phtml');
 	}
 
 
