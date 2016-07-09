@@ -27,18 +27,22 @@
                 </tr>
               </thead>
               <tbody>
+                <?php foreach ($this->contacts as $key) { ?>
+                 
+               
                 <tr>
-                  <td>Felipe</td>
-                  <td>(98) 912386-7788</td>
-                  <td>dicasdoprogramador@gmail.com</td>
+                  <td><?=$key["nome"]?></td>
+                  <td><?=$key["phone"]?></td>
+                  <td><?=$key["email"]?></td>
                   <td>
                     <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-default btn-primary">Edit</button>
+                      <a type="button" class="btn btn-default btn-primary" href="/editContact/<?=$key["id_contact"]?>">Edit</a>
                       <button type="button" class="btn btn-default btn-danger">Delete</button>
                      
                     </div>
                   </td>                  
-                </tr>                
+                </tr>   
+                <?php } ?>             
               </tbody>
             </table>
           </div>

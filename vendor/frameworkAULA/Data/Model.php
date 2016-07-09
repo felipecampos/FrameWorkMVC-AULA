@@ -36,6 +36,8 @@ abstract class Model{
 
 		$r = $this->_pdo->prepare("INSERT INTO {$this->table} ({$insert_campos}) VALUES ('{$insert_values}')");
 		$r->execute();
+
+		return $this->_pdo->lastInsertId();
 	}
 
 	public function read($campos = "*",$where=null){

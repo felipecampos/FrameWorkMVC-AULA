@@ -13,8 +13,15 @@ $route->get("/","Index@Index");
 //tela de cadastro
 $route->get("/cadastro","Index@cadContact");
 
+$route->get("/erroCadastro","Index@erroCadastro");
+
+
+$route->get("/editContact/[i:id]","Index@editContact");
+$route->post("/cadastro","Index@cadContactPost");
+
+
 //tela de Edição
-$route->get("/edit","Index@editContact");
+//$route->get("/edit","Index@editContact");
 
 
 //Rota de Login

@@ -19,22 +19,55 @@ class IndexController extends BaseController{
 	//action
 	public function Index(){
 
-		$this->service->render('home/list.home.phtml');
+		$model = new ContactModel();
+
+		$dados["contacts"] = $model->read();
+
+		$this->service->render('home/list.home.phtml',$dados);
 	}
 
 
 
 	public function cadContact(){
+
+
 		$this->service->render('home/cad.home.phtml');
 	}
 
+
+	public function cadContactPost(){
+
+		
+
+		if(!IsNullOrEmpty($_POST["nome"]) && !IsNullOrEmpty($_POST["phone"]) && !IsNullOrEmpty($_POST["email"])){
+			$model = new ContactModel();
+
+			$dados = array('nome' => $_POST["nome"],"phone"=>$_POST["phone"],"email"=>$_POST["email"] );
+			$result = $model->insert($dados);
+
+			if($result){
+				$this->response->redirect("/editContact/{$result}")->send();
+			}else{
+				$this->response->redirect("/erroCadastro")->send();
+			}
+		}else{
+			$this->response->redirect("/cadastro")->send();
+		}
+	}
+	
+	public function erroCadastro(){
+
+		echo "erro cadastro";
+	}
 
 	public function editContact(){
 
 		$id = $this->request->id;
 		$data_contact = array();
 
-		$this->service->render('home/edit.home.phtml',$data_contact);
+		echo $id;
+
+		//$this->service->render('home/edit.home.phtml',$data_contact);
 	}
 }
 

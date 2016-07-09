@@ -23,3 +23,10 @@ function assets($file){
 }
 
 
+function IsNullOrEmpty($var){
+
+	if(empty($var) || $var == null)
+		return true;
+
+	return false;
+}
