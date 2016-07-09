@@ -10,6 +10,7 @@
 namespace App\Controllers;
 
 use FrameworkAULA\Http\Controller;
+use App\Models\ContactModel;
 
 //controller
 class IndexController extends BaseController{
@@ -36,3 +37,5 @@ class IndexController extends BaseController{
 		$this->service->render('home/edit.home.phtml',$data_contact);
 	}
 }
+
+

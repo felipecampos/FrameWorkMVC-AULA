@@ -19,7 +19,7 @@ class View extends ServiceProvider{
 	*/
 
 	public function render($view, array $data = array()){
-		parent::render(VIEWS."/".$view,$data);
+		parent::render(VIEWS.DS.$view,$data);
 	}
 
 }

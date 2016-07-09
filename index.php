@@ -5,10 +5,10 @@
 * Palestrante: Felipe Campos
 * Canal: Dicas do Programador
 */
-
+require_once __DIR__.DIRECTORY_SEPARATOR."bootstrap".DIRECTORY_SEPARATOR."configuration.php";
 
 /*Carregando autoload do composer*/
-$start = require_once __DIR__."/bootstrap/autoload.php";
+$start = require_once __DIR__.DS."bootstrap".DS."autoload.php";
 
 //print_r($_SERVER);
 

@@ -19,7 +19,7 @@ class Route extends Klein{
 	* @param [String,String | Call]
 	* [Aqui estaremos passando como parametro nossa $route, e nossa $call = 'ControllerName@ActionName']
 	*/
-	public function get($route,$call){
+	public function get($route="*",$call=null){
 
 		if(is_string($call)){
 
@@ -28,7 +28,7 @@ class Route extends Klein{
 			$action = $explode[1];
 			
 
-			$this->respond("GET",$route,function($request, $response, $service, $app) use ($controller,$action){
+			parent::get($route,function($request, $response, $service, $app) use ($controller,$action){
 				$class = new $controller();
 				$class->__loadVars($request, $response, $app);
 				return $class->$action();
@@ -36,11 +36,11 @@ class Route extends Klein{
 
 
 		}else{
-			$this->respond("GET",$route,$call);
+			parent::get($route,$call);
 		}
 	}
 
-	public function post($route,$call){
+	public function post($route="*",$call=null){
 		
 		if(is_string($call)){
 
@@ -49,7 +49,7 @@ class Route extends Klein{
 			$action = $explode[1];
 			
 
-			$this->respond("POST",$route,function($request, $response, $service, $app) use ($controller,$action){
+			parent::post($route,function($request, $response, $service, $app) use ($controller,$action){
 				$class = new $controller();
 				$class->__loadVars($request, $response, $app);
 				return $class->$action();
@@ -57,7 +57,7 @@ class Route extends Klein{
 
 
 		}else{
-			$this->respond("POST",$route,$call);
+			parent::post($route,$call);
 		}
 	}
 }

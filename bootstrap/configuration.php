@@ -1,16 +1,18 @@
 <?php
 
-define("RAIZ",__DIR__."/..");
+define("DS",DIRECTORY_SEPARATOR);
 
-define("APP",RAIZ."/app");
+define("RAIZ",__DIR__.DS."..");
 
-define("MODELS",APP."/models");
+define("APP",RAIZ.DS."app");
 
-define("CONTROLLERS",APP."/controllers");
+define("MODELS",APP.DS."models");
 
-define("VIEWS",APP."/views");
+define("CONTROLLERS",APP.DS."controllers");
 
-define("VENDOR",RAIZ."/vendor");
+define("VIEWS",APP.DS."views");
+
+define("VENDOR",RAIZ.DS."vendor");
 
 define("ASSETS","/public_html");
 
