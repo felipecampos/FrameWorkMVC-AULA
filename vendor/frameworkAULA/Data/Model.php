@@ -64,6 +64,7 @@ abstract class Model{
 		$sql_text = implode(",", $sql_text_array);
 		$r = $this->_pdo->prepare("UPDATE {$this->table} SET {$sql_text} {$where_sql}");
 		$r->execute();
+		return $r->rowCount();
 
 	}
 
@@ -73,7 +74,10 @@ abstract class Model{
 		if(!empty($where_sql)){
 			$r = $this->_pdo->prepare("DELETE FROM $this->table WHERE {$where_sql}");
 			$r->execute();
+			return $r->rowCount();
 		}
+
+		return 0;
 		
 	}
 

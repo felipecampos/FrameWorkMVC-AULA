@@ -16,4 +16,13 @@ class ContactModel extends Model{
 
 	protected $table = "contact";
 
+
+	public function checkVarsIsNotNull(array $array){
+
+		if(!IsNullOrEmpty($array["nome"]) && !IsNullOrEmpty($array["phone"]) && !IsNullOrEmpty($array["email"]))
+			return true;
+
+		return false;
+	}
+
 }

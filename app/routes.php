@@ -14,9 +14,16 @@ $route->get("/","Index@Index");
 $route->get("/cadastro","Index@cadContact");
 
 $route->get("/erroCadastro","Index@erroCadastro");
+$route->get("/erroUpdate","Index@erroUpdate");
+$route->get("/erroDelete","Index@erroDelete");
+
 
 
 $route->get("/editContact/[i:id]","Index@editContact");
+$route->post("/editContact/[i:id]","Index@editContactPost");
+
+$route->get("/deleteContact/[i:id]","Index@deleteContact");
+
 $route->post("/cadastro","Index@cadContactPost");
 
 

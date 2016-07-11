@@ -1,5 +1,5 @@
 
-          
+       
 
           <!-- Single button -->
         <div class="btn-group">
@@ -43,20 +43,20 @@
 
           <h2 class="sub-header">Edit Contact</h2>
 
-          <form>
+          <form action="<?=base_url()?>/editContact/<?=$this->contact["id_contact"]?>" method="POST">
           <div class="form-group">
             <label for="nameInput">Name</label>
-            <input type="text" class="form-control" id="nameInput" placeholder="Name">
+            <input type="text" class="form-control" name="nome" id="nameInput" placeholder="Name" value="<?=$this->contact["nome"]?>">
           </div>
 
           <div class="form-group">
             <label for="phoneInput">Phone</label>
-            <input type="text" class="form-control" id="phoneInput" placeholder="Email">
+            <input type="text" class="form-control" name="phone" id="phoneInput" placeholder="Email" value="<?=$this->contact["phone"]?>">
           </div>
 
           <div class="form-group">
             <label for="emailInput">Email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="Email">
+            <input type="email" class="form-control" id="emailInput"  name="email" placeholder="Email" value="<?=$this->contact["email"]?>">
           </div>
          
           <button type="submit" class="btn btn-default">Save</button>
